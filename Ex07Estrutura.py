@@ -22,4 +22,16 @@ class Produto:
     preco = 0.00
 
 def menu():
+    print('\n{:*^40}'.format( 'MENU '))
+    print('''\n  [ 1 ] Cadastrar produtos
+  [ 2 ] Visualizar todos os dados
+  [ 3 ] Sair''')
+    opcao = int(input('\nDigite a sua opção: '))
+    return opcao
+
+
+
+
+def main():
+    op = menu()
     
