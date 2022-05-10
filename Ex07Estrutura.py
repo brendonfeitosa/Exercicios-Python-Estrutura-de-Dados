@@ -4,3 +4,22 @@ Menu de opções:
 2. Visualizar todos os dados
 3. Sair'''
 
+class DataFabricacao:
+    dia = 0
+    mes = 0
+    ano = 0
+
+class DataValidade:
+    dia = 0
+    mes = 0
+    ano = 0
+
+class Produto:
+    codigo = 0
+    nome = ''
+    data_fabricacao = DataFabricacao()
+    data_validade = DataValidade()
+    preco = 0.00
+
+def menu():
+    
