@@ -36,13 +36,13 @@ def cadastrar():
         a.codigo = int(input('\nDigite o código do produto: '))
         a.nome = input('Digite o nome do produto: ')
         a.data_fabricacao = DataFabricacao()
-        print('{:-^40}'.format(' Data de Fabricação '))
-        a.data_fabricacao.dia = int(input('Digite o dia da fabicação: '))
+        print('\n{:-^40}'.format(' Data de Fabricação '))
+        a.data_fabricacao.dia = int(input('\nDigite o dia da fabicação: '))
         a.data_fabricacao.mes = int(input('Digite o mês de fabricação: '))
         a.data_fabricacao.ano = int(input('Digite o ano de fabricação: '))
         a.data_validade = DataValidade()
-        print('{:-^40}'.format(' Data de Validade '))
-        a.data_validade.dia = int(input('Digite o dia da validade: '))
+        print('\n{:-^40}'.format(' Data de Validade '))
+        a.data_validade.dia = int(input('\nDigite o dia da validade: '))
         a.data_validade.mes = int(input('Digite o mês da validade: '))
         a.data_validade.ano = int(input('Digite o ano da validade: '))
         a.preco = float(input('Digite o preço do produto: R$ '))
@@ -52,11 +52,10 @@ def cadastrar():
 def visualizar(vet_prod):
     cont = 0
     for i in range(len(vet_prod)):
-        print()
-        print('| Código do produto: {} | Nome: {} | Data de fabricação: {}/{}/{} | Data de validade: {}/{}/{} | Preço: R$ {:.2f}'.format(vet_prod[i].codigo, vet_prod[i].nome, vet_prod[i].data_fabricacao.dia, vet_prod[i].data_fabricacao.mes, vet_prod[i].data_fabricacao.ano, vet_prod[i].data_validade.dia, vet_prod[i].data_validade.mes, vet_prod[i].data_validade.ano, vet_prod[i].preco))
+        print('\n| Código do produto: {} | Nome: {} | Data de fabricação: {}/{}/{} | Data de validade: {}/{}/{} | Preço: R$ {:.2f}'.format(vet_prod[i].codigo, vet_prod[i].nome, vet_prod[i].data_fabricacao.dia, vet_prod[i].data_fabricacao.mes, vet_prod[i].data_fabricacao.ano, vet_prod[i].data_validade.dia, vet_prod[i].data_validade.mes, vet_prod[i].data_validade.ano, vet_prod[i].preco))
         cont = i + 1
     if cont > 1:
-        print('Fim dos resultados!')
+        print('\nFim dos resultados!')
 
 def main():
     v_prod = []
@@ -67,10 +66,8 @@ def main():
         elif op == 2:
             visualizar(v_prod)
         elif op == 3:
-            print('{:-^*40}'.format('FIM!'))
             break
         elif op != 1 or op !=2 or op != 3:
             print('Opção Inválida, tente novamente!')
         op = menu()
 main()
-    
