@@ -35,3 +35,15 @@ A seguir são apresentados os detalhes de implementação de cada opção do men
 8 Excluir documentos por período — o programa deverá informar o dia inicial e o dia final e excluir todos os documentos que possuam data de vencimento nesse período.
 9 Alterar as informações sobre os clientes — só NÃO altere o código do cliente.
 10 Mostrar o total de documentos de determinado cliente.'''
+class Cliente:
+    cod_cliente = 0
+    nome = ''
+    telefone = ''
+
+class Documentos:
+    num_doc = 0
+    cod_cli = Cliente()
+    dia_venc = 0
+    dia_pag = 0
+    valor = 0
+    juros = 0
