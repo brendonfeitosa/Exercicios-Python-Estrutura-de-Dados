@@ -33,6 +33,7 @@ def cadastrar():
     vet_prod = []
     for i in range(2):
         a = Produto()
+        print('\n{:-^40}'.format(' Cadastre um Produto '))
         a.codigo = int(input('\nDigite o código do produto: '))
         a.nome = input('Digite o nome do produto: ')
         a.data_fabricacao = DataFabricacao()
@@ -68,6 +69,6 @@ def main():
         elif op == 3:
             break
         elif op != 1 or op !=2 or op != 3:
-            print('Opção Inválida, tente novamente!')
+            print('\nOpção Inválida, tente novamente!')
         op = menu()
 main()
