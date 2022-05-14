@@ -30,7 +30,26 @@ def menu():
     return opcao
 
 def cadastrar():
+    vet_prod = []
+    for i in range(2):
+        a = Produto()
+        a.codigo = int(input('Digite o código do produto: '))
+        a.nome = input('Digite o nome do produto: ')
+        a.data_fabricacao = DataFabricacao()
+        a.data_fabricacao.dia = int(input('Digite o dia da fabicação: '))
+        a.data_fabricacao.mes = int(input('Digite o mês de fabricação: '))
+        a.data_fabricacao.ano = int(input('Digite o ano de fabricação: '))
+        a.data_validade = DataValidade()
+        a.data_validade.dia = int(input('Digite o dia da validade: '))
+        a.data_validade.mes = int(input('Digite o mês da validade: '))
+        a.data_validade.ano = int(input('Digite o ano da validade: '))
+        a.preco = float(input('Digite o preço do produto: R$ '))
+        vet_prod.append(a)
+    return vet_prod
+
+def visualizar(vet_prod):
     
+
 
 
 
