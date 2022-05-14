@@ -53,7 +53,7 @@ def cadastrar():
 def visualizar(vet_prod):
     cont = 0
     for i in range(len(vet_prod)):
-        print('\n| Código do produto: {} | Nome: {} | Data de fabricação: {}/{}/{} | Data de validade: {}/{}/{} | Preço: R$ {:.2f}'.format(vet_prod[i].codigo, vet_prod[i].nome, vet_prod[i].data_fabricacao.dia, vet_prod[i].data_fabricacao.mes, vet_prod[i].data_fabricacao.ano, vet_prod[i].data_validade.dia, vet_prod[i].data_validade.mes, vet_prod[i].data_validade.ano, vet_prod[i].preco))
+        print('\n| Código do produto: {} | Nome: {} | Data de fabricação: {}/{}/{} | Data de validade: {}/{}/{} | Preço: R$ {:.2f} |'.format(vet_prod[i].codigo, vet_prod[i].nome, vet_prod[i].data_fabricacao.dia, vet_prod[i].data_fabricacao.mes, vet_prod[i].data_fabricacao.ano, vet_prod[i].data_validade.dia, vet_prod[i].data_validade.mes, vet_prod[i].data_validade.ano, vet_prod[i].preco))
         cont = i + 1
     if cont > 1:
         print('\nFim dos resultados!')
