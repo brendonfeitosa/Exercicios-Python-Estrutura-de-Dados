@@ -47,3 +47,74 @@ class Documentos:
     dia_pag = 0
     valor = 0
     juros = 0
+
+def menu():
+    print('{:^*80}'.format(' SISTEMA GERENCIADOR DE CLIENTES E DOCUMENTOS '))
+    print('\n1. Cadastrar clientes')
+    print('2. Relatório de clientes')
+    print('3. Cadastrar documentos')
+    print('4. Relatório de documentos')
+    print('5. Excluir clientes sem documentos')
+    print('6. Excluir documentos individuais pelo número')
+    print('7. Excluir documentos por cliente')
+    print('8. Excluir documentos por período')
+    print('9. Alterar as informações dos clientes')
+    print('10. Mostrar o total de documentos de determinado cliente')
+    print('11. Sair')
+    opcao = int(input('\nQual opção deseja? '))
+    return opcao
+
+def cad_cliente():
+    v_cliente = []
+    for i in range(2):
+        c = Cliente()
+        c.cod_cliente = int(input('\nDigite o código do cliente: '))
+        c.nome = input('Digite o nome do cliente: ')
+        c.telefone = input('Digite o telefone do cliente: ')
+        v_cliente.append(c)
+    return v_cliente
+
+def visualizar_cliente(v_cliente):
+    for i in range(len(v_cliente)):
+        print('\nClientes cadastrados...')
+        print('Temos {} clientes cadastrados'.format(len(v_cliente)))
+        print('\n| Código: {} | Nome: {} | Telefone {} |'.format(v_cliente[i].cod_cliente, v_cliente[i].nome, v_cliente[i].telefone))
+        
+
+
+
+
+
+
+
+
+def main():
+    vet_doc = []
+    vet_cliente = []
+    op = menu()
+    while op >= 1 and op <= 11:
+        if op == 1:
+            vet_cliente = cad_cliente()
+        elif op == 2:
+            visualizar_cliente(vet_cliente)
+        elif op == 3:
+            vet_doc = cad_doc()
+        elif op == 4:
+            visualizar_docs(vet_doc)
+        elif op == 5:
+            exc_cliente_s_doc(vet_doc, vet_cliente)
+        elif op == 6:
+            exc_doc_num(vet_doc)
+        elif op == 7:
+            exc_doc_p_cliente(vet_doc,vet_cliente)
+        elif op == 8:
+            exc_doc_periodo(vet_doc)
+        elif op == 9:
+            alt_inf_cliente(vet_cliente)
+        elif op == 10:
+            visualizar_doc_cliente(vet_doc, vet_cliente)
+        elif op == 11:
+            print('FIM!')
+            break
+        op = menu()
+main()
