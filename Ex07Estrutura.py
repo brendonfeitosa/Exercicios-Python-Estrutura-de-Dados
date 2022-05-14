@@ -29,9 +29,24 @@ def menu():
     opcao = int(input('\nDigite a sua opção: '))
     return opcao
 
+def cadastrar():
+    
+
 
 
 
 def main():
+    v_prod = []
     op = menu()
+    while True:
+        if op == 1:
+            v_prod = cadastrar()
+        elif op == 2:
+            visualizar(v_prod)
+        elif op == 3:
+            print('{:-^*40}'.format('FIM!'))
+            break
+        elif op != 1 or op !=2 or op != 3:
+            print('Opção Inválida, tente novamente!')
+main()
     
