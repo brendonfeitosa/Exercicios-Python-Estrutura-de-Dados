@@ -129,7 +129,7 @@ def exc_doc_num(v_doc): #6
         v_doc.pop(indice)
     return v_doc
 
-def exc_doc_p_cliente(v_doc, v_cliente): #7
+'''def exc_doc_p_cliente(v_doc, v_cliente): #7
     cont = 0
     if len(v_cliente) > 0:
         cod_cliente = int(input('Digite o código do cliente que deseja excluir os documentos: '))
@@ -138,7 +138,7 @@ def exc_doc_p_cliente(v_doc, v_cliente): #7
 
 
 def exc_doc_periodo(v_doc): #8
-    if
+    if'''
 
 def alt_inf_cliente(v_cliente): #9
     cont = 0
@@ -146,9 +146,9 @@ def alt_inf_cliente(v_cliente): #9
         cliente_consultar = int(input('\nDigite o código do cliente que deseja alterar: '))
         for i in range(len(v_cliente)):
             if cliente_consultar == v_cliente[i].cod_cliente:
-                print('\nCliente localizado, qual alteração deseja fazer: ')
                 print('\nO código do cliente não pode ser alterado.')
-                print('\n{:<} \n{:<} \n{:<}'.format('1. Nome', '2. Telefone', "3. Voltar ao menu anterior"))
+                print('\nCliente localizado, qual alteração deseja fazer: ')
+                print('\n{:<} \n{:<} \n{:<}'.format('1. Nome', '2. Telefone', '3. Voltar ao menu anterior'))
                 opcao = int(input('\nDigite a sua opção: '))
                 if opcao == 1:
                     alterar_nome = input('\nDigite o novo nome: ')
@@ -158,12 +158,13 @@ def alt_inf_cliente(v_cliente): #9
                     v_cliente[i].telefone = alterar_telefone
                 elif opcao == 3:
                     menu()
+                print('Alteração efetuada!')
             else:
                 cont += 1
         if cont > len(v_cliente):
             print('Não há dados para alteração.')
     return v_cliente
-    
+
 def visualizar_doc_cliente(v_doc, v_cliente): #10
     total_doc = 0
     cliente_consultar = input('Digite o código do cliente que quer saber a quantidade de documentos: ')
