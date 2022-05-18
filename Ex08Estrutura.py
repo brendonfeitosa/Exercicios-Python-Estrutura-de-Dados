@@ -81,25 +81,35 @@ def visualizar_cliente(v_cliente): #2
 
 def cad_doc(v_cliente): #3
     v_doc = []
-    for i in range(2):
+    for i in range(1):
         d = TipoDocumentos()
         d.num_doc = int(input('\nDigite o número do documento (apenas números): '))
         d.cod_clien = v_cliente[i].cod_cliente
         d.dia_venc = int(input('Digite o dia do vencimento: '))
         d.dia_pag = int(input('Digite o dia do pagamento: '))
         d.valor = float(input('Digite o valor do documento: R$ '))
-        qtd_dias = d.dia_pag - d.dia_venc
-        d.juros = qtd_dias * (5 / 100)
+        if d.dia_pag > d.dia_venc:
+            d.juros = d.valor + (d.valor * (5 / 100))
+        else:
+            d.juros = d.valor
         v_doc.append(d)
     return v_doc
 
 def visualizar_docs(v_doc): #4
     print('\nExistem {} documentos cadastrados.'.format(len(v_doc)))
     for i in range(len(v_doc)):
-        print('\n| Número do documento: {} | Código do cliente: {} | Dia de Vencimento: {} | Dia de pagamento: {} | Valor original: R$ {} | Valor de juros: R$ {} | Valor a pagar R$ : {} |'.format(v_doc[i].num_doc, v_doc[i].cod_clien, v_doc[i].dia_venc, v_doc[i].dia_pag, v_doc[i].valor, v_doc[i].juros, v_doc[i].valor + v_doc[i].juros))
+        print('\n| Número do documento: {} | Código do cliente: {} | Dia de Vencimento: {} | Dia de pagamento: {} | Valor original: R$ {} | Valor a pagar R$ : {} |'.format(v_doc[i].num_doc, v_doc[i].cod_clien, v_doc[i].dia_venc, v_doc[i].dia_pag, v_doc[i].valor, v_doc[i].juros))
 
 def exc_cliente_s_doc(v_doc, v_cliente): #5
-    if len(v_cliente) > 0:
+    for c in range(len(v_cliente)):
+        for d in range(len(v_doc)):
+            if v_cliente[c].cod_cliente == v_doc[d].cod_clien.cod_cliente:
+                print('encontrou')
+
+
+
+
+        '''if len(v_cliente) > 0:
         print('\nExclusáo de cliente sem nenhum documento associado...')
         for i in range(len(v_cliente)):
             if i == 0:
@@ -110,8 +120,11 @@ def exc_cliente_s_doc(v_doc, v_cliente): #5
                 indice_exclusao = i
         v_cliente.pop(indice_exclusao)
         print('Exclusão realizada com sucesso...')
-    else: 
-        print('Não existem clientes para exclusão...')
+        else: 
+            print('Não existem clientes para exclusão...')'''
+
+
+
 
 def exc_doc_num(v_doc): #6
     cont = 0
@@ -121,11 +134,12 @@ def exc_doc_num(v_doc): #6
             if doc_excluir != v_doc[i].num_doc:
                 indice = i
                 excluir = v_doc[i].num_doc
-                print('\nDocumento não encontrado.')
             if doc_excluir == v_doc[i].num_doc:
                 indice = i
                 excluir = v_doc[i].num_doc
                 print('Exclusão Efetuada!')
+        if excluir == 0:
+            print('\nDocumento não encontrado.')
         v_doc.pop(indice)
     return v_doc
 
@@ -134,11 +148,13 @@ def exc_doc_num(v_doc): #6
     if len(v_cliente) > 0:
         cod_cliente = int(input('Digite o código do cliente que deseja excluir os documentos: '))
         for i in range(len(v_cliente)):
-            if 
+            if '''
 
 
 def exc_doc_periodo(v_doc): #8
-    if'''
+    if len(v_doc) > 0:
+        data_venc_inicial = int(input('Digite a primeira data para pesquisa: '))
+        data_venc_final = int(input('Digite a ultima data para pesquisa: '))
 
 def alt_inf_cliente(v_cliente): #9
     cont = 0
